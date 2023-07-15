@@ -8,9 +8,10 @@ from pydantic import BaseModel
 from schemas.base import CreateShortUrl
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from abc import ABC
 
 
-class Repository:
+class Repository(ABC):
 
     def get(self, *args, **kwargs):
         raise NotImplementedError
